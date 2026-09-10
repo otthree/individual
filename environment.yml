@@ -1,0 +1,26 @@
+name: project-env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  - pip:
+      - transformers
+      - datasets
+      - huggingface_hub
+      - wandb
+      - monai        # 신경영상 DL에 자주 쓰이는 라이브러리 — 불필요하면 제거
+      - nibabel        # NIfTI I/O
+      - hydra-core       # 실험 config 관리 (선택)
+      - pyyaml

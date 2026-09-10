@@ -10,19 +10,6 @@ Most neuroimaging models are trained to predict a group-level outcome and treat 
 
 The work is done in collaboration with Roy Seo at CAMH / KCNI (Toronto). I am responsible for the engineering and data science side: data pipeline, training infrastructure, experiment tracking, and model development.
 
-## Planned datasets
-
-Candidate multi-cohort sources (public, access-controlled):
-
-| Cohort | Focus |
-|---|---|
-| ADNI | Aging, MCI, Alzheimer's disease |
-| OASIS-3 | Longitudinal aging and dementia |
-| HCP-Aging | Healthy aging, lifespan |
-| NACC | Clinical dementia cohort |
-
-Raw imaging data is never committed to this repository. Only paths, configs, and derived metadata are versioned.
-
 ## Approach (candidates under evaluation)
 
 - **Biomarker:** T1-weighted ratio computed from structural MRI, harmonized across cohorts
@@ -37,22 +24,6 @@ Raw imaging data is never committed to this repository. Only paths, configs, and
 - Hugging Face `transformers` / `datasets` / `huggingface_hub`
 - Weights & Biases, Hydra (config management)
 - conda environment, SLURM job scripts
-
-## Repository layout (planned)
-
-```
-.
-├── src/
-│   ├── data/          # loading, preprocessing, dataset classes
-│   ├── models/        # model definitions
-│   ├── configs/       # experiment configs (yaml, versioned)
-│   ├── scripts/       # train / eval / preprocessing entry points
-│   └── experiments/   # per-run outputs (git-ignored)
-├── notebooks/         # exploratory analysis
-├── docs/              # scoping notes, design decisions
-├── environment.yml
-└── README.md
-```
 
 ## Engineering principles
 
@@ -71,14 +42,6 @@ conda activate project-env
 wandb login
 huggingface-cli login
 ```
-
-## Roadmap
-
-- [ ] Finalize research question and target phenotypes
-- [ ] Confirm cohort access and define the harmonization pipeline
-- [ ] Implement T1-weighted ratio extraction and QC
-- [ ] Baseline models, then individual-difference-aware variants
-- [ ] Release configs, selected checkpoints, and a technical report
 
 ## License
 
