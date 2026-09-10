@@ -1,4 +1,4 @@
-# individual
+# Study of individual differences in Roy Lab
 
 Multi-cohort study of T1-weighted ratio as a marker of individual differences.
 
